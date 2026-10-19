@@ -1448,16 +1448,19 @@ button { cursor: pointer; }
 
 @media (max-width: 900px) {
   .topbar-inner { position: relative; justify-content: flex-start; }
+  /* Brand sits right next to the hamburger (left side), not centered */
   .topbar-inner > .brand {
-    position: absolute;
-    left: 50%;
-    margin: 0;
+    position: static;
+    margin: 0 auto 0 -6px;
     padding: 0;
-    transform: translateX(-50%);
-    gap: 6px;
+    transform: none;
+    gap: 4px;
   }
-  .topbar-inner > .brand:hover { transform: translateX(-50%) translateY(-1px); }
-  .brand-emblem img { width: 54px !important; height: 58px !important; margin-right: 0 !important; }
+  .topbar-inner > .brand:hover { transform: translateY(-1px); }
+  /* Larger logo on mobile (movie mode) */
+  .brand-emblem img { width: 88px !important; height: 94px !important; margin-right: 0 !important; }
+  /* Larger logo on mobile (anime mode) */
+  .anime-mode .brand-emblem img { width: 76px !important; height: 83px !important; margin-right: 0 !important; }
   .brand-sub { font-size: 9px; letter-spacing: 3px; }
   .brand-title { font-size: 20px; }
   .hamburger-btn { z-index: 2; }
